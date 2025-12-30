@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <!-- Carga el script después de que el HTML esté listo -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    
+    <form id="Formularios">
+        <label for="">Nombre:</label>
+        <input type="text" name="nombre" id="idNombre">
+        <br>
+
+        <label for="">Apellido:</label>
+        <input type="text" name="apellido" id="idApellido">
+        <br>
+
+        <label for="">Edad:</label>
+        <input type="text" name="edad" id="idEdad">
+    </form> 
+    
+    <!-- type="button" para que solo ejecute la función -->
+    <button type="button" onclick="guardarPersona()">Guardar</button>
+    
+    <div id="respuesta"></div>
+
+    <table style="border: 1px solid red">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody id="detalle">
+
+        </tbody>
+    </table>
+
+</body>
+</html>
