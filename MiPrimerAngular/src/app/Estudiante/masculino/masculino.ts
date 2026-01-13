@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Femenino } from "../femenino/femenino";
 
 @Component({
   selector: 'app-masculino',
-  imports: [],
+  imports: [Femenino],
   templateUrl: './masculino.html',
   styleUrl: './masculino.css',
 })

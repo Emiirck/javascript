@@ -1,5 +1,88 @@
-<h1> Hola Chat</h1>
+<!--
+<h1>Pipes en Angular</h1>
 
-<app-persona></app-persona>
-<app-femenino></app-femenino>
-<app-masculino></app-masculino>
+<button class="btn btn-dark">Aceptar</button>
+<button class="btn btn-danger">Cancelar</button>
+<button class="btn btn-warning">Aceptar</button>
+<button class="btn btn-primary">Cancelar</button>
+
+<h2>{{tituloPeriodico}}</h2>
+<p>{{persona[2].nombre}}</p>
+<p>{{persona[0].nombre}}</p>
+
+
+<h3>{{variableTexto | uppercase}}</h3>
+<h3>{{variableTexto | lowercase}}</h3>
+<h3>{{valorTotal.toString()| currency:'EUR'}}</h3>
+<h3>{{ '0.08' | percent}}</h3>
+<h3>{{3.14159 | number: '1.2-2'}}</h3>
+<h3>{{'1/10/2026' | date}}</h3>
+
+
+<div *ngIf="edad > 18">
+  <p>La persona es mayor de edad</p>
+</div>
+
+@if (edad <= 18) {
+  <div class = "alert alert-danger">La persona es menor de edad</div>
+}@else {
+  <div class = "alert alert-success">La persona es mayor de edad</div>
+}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Edad</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (estudiantes of estudiante; track $index) {
+    <tr>
+      <th scope="row">卐 {{estudiantes.id}}</th>
+      <td>{{estudiantes.nombre}}</td>
+      <td>{{estudiantes.apellido}}</td>
+      <td>{{estudiantes.edad}}</td>
+    </tr>
+    }@empty {
+      <tr>
+        <td colspan="4">No hay estudiantes registrados</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+@switch (DiasSemana[2]) {
+  @case (DiasSemana[1]) {
+    <h1>Lunes</h1>
+  }
+  @case (DiasSemana[2]) {
+    <h1>Martes</h1>
+  }
+  @case (DiasSemana[3]) {
+    <h1>Miércoles</h1>  
+  }
+  @case (DiasSemana[4]) {
+    <h1>Jueves</h1>
+  }
+  @case (DiasSemana[5]) {
+    <h1>Viernes</h1>
+  }
+  @case (DiasSemana[6]) {
+    <h1>Sábado</h1>
+  }
+  @case (DiasSemana[7]) {
+    <h1>Domingo</h1>z
+  }
+  @default {
+    <h1>No es un día de la semana</h1>
+  }
+}
+-->
+
+<app-navbar></app-navbar>
+
+<router-outlet></router-outlet>
+

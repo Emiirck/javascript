@@ -1,2 +1,70 @@
-<p>persona works!</p>
+<h1>Registro Estudiante</h1>
 
+<div style="width: 300px; margin: 15px">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">id</label>
+    <input [(ngModel)]="id" type="number" class="form-control" id="exampleFormControlInput1" placeholder="id" />
+  </div>
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+          <input [(ngModel)]="nombre" type="string" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" />
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+          <input [(ngModel)]="apellido" type="string" class="form-control" id="exampleFormControlInput1" placeholder="Apellido" />
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Edad</label>
+          <input [(ngModel)]="edad" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Edad" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn btn-success" (click)="guardarEstudiante()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+
+
+<h1>Listado de Registro de Estudiantes</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Accion</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (estudiantes of estudiante; track $index) {
+    <tr>
+      <th scope="row">卐 {{ estudiantes.id }}</th>
+      <td>{{ estudiantes.nombre }}</td>
+      <td>{{ estudiantes.apellido }}</td>
+      <td>{{ estudiantes.edad }}</td>
+      <td>
+        <button class="btn btn-primary" routerLink="/editarpersona/{{ estudiantes.id }}">
+          Editar
+        </button>
+      </td>
+      <td><button class="btn btn-danger" (click)="eliminar($index)">Eliminar</button></td>
+    </tr>
+    }@empty {
+    <tr>
+      <td colspan="5">No hay estudiantes registrados</td>
+    </tr>
+    }
+  </tbody>
+</table>
